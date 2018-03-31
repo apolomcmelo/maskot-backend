@@ -3,9 +3,9 @@ package br.com.apolomcmelo.maskotbackend.models;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import lombok.Data;
 import br.com.apolomcmelo.maskotbackend.enums.Size;
 import br.com.apolomcmelo.maskotbackend.enums.Species;
-import lombok.Data;
 
 @Data
 public class Pet {
@@ -21,7 +21,7 @@ public class Pet {
 	private Boolean neutered;
 	private Integer stage;
 	
-	private Location lastLocation;
+	private String lastLocation;
 	private LocalDateTime lastTimeSeen;
 	private Boolean withOwner;
 	
