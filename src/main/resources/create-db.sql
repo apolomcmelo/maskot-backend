@@ -1,1 +1,1 @@
-CREATE DATABASE IF NOT EXISTS maskot-app-for-pets;
+CREATE DATABASE IF NOT EXISTS maskot_app_for_pets;
