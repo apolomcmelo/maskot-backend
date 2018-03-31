@@ -1,0 +1,75 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="br.com.apolomcmelo.maskotbackend.persistence.PetMapper">
+
+	<select id="findPetById" resultType="br.com.apolomcmelo.maskotbackend.models.Pet">
+		SELECT
+			*
+		FROM
+			PET
+		WHERE
+			ID = #{id}
+	</select>
+
+	<select id="listPets" resultType="br.com.apolomcmelo.maskotbackend.models.Pet">
+		SELECT
+			*
+		FROM
+			PET
+	</select>
+	
+	<insert id="insertPet" parameterType="br.com.apolomcmelo.maskotbackend.models.Pet">
+		INSERT INTO PET (
+							ID,
+							NAME,
+							PROFILE_PICTURE,
+							SPECIES,
+							SIZE,
+							NEUTERED_STATUS,
+							STAGE,
+							LAST_LOCATION,
+							LAST_TIME_SEEN,
+							WITH_OWNER
+						)
+						VALUES
+						(
+							#{id, 				jdbcType=NUMERIC},
+							#{name, 			jdbcType=VARCHAR},
+							#{profilePicture, 	jdbcType=VARCHAR},
+							#{species, 			jdbcType=VARCHAR},
+							#{size, 			jdbcType=VARCHAR},
+							#{neutered,			jdbcType=NUMERIC},
+							#{stage, 			jdbcType=NUMERIC},
+							#{lastLocation, 	jdbcType=VARCHAR},
+							#{lastTimeSeen, 	jdbcType=TIMESTAMP},
+							#{withOwner, 		jdbcType=NUMERIC}
+						}
+								
+	</insert>
+	
+	<update id="updatePet" parameterType="br.com.apolomcmelo.maskotbackend.models.Pet">
+		UPDATE PET SET (
+							NAME,
+							SPECIES,
+							SIZE,
+							NEUTERED_STATUS,
+							STAGE,
+							LAST_LOCATION,
+							LAST_TIME_SEEN,
+							WITH_OWNER
+						)
+						VALUES
+						(
+							#{name, 			jdbcType=VARCHAR},
+							#{species, 			jdbcType=VARCHAR},
+							#{size, 			jdbcType=VARCHAR},
+							#{neutered,			jdbcType=NUMERIC},
+							#{stage, 			jdbcType=NUMERIC},
+							#{lastLocation, 	jdbcType=VARCHAR},
+							#{lastTimeSeen, 	jdbcType=TIMESTAMP},
+							#{withOwner, 		jdbcType=NUMERIC}
+						}
+		WHERE ID = #{id, jdbcType=NUMERIC}
+								
+	</update>
+	
+</mapper>

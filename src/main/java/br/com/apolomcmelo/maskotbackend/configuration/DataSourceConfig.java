@@ -60,7 +60,7 @@ public class DataSourceConfig {
 	public Docket api() {                
 	    return new Docket(DocumentationType.SWAGGER_2)          
 	      .select()                                       
-	      .apis(RequestHandlerSelectors.basePackage("melo.mc.apolo.loto.facil.backend.controller"))
+	      .apis(RequestHandlerSelectors.basePackage("br.com.apolomcmelo.maskotbackend.controllers"))
 	      .paths(PathSelectors.any())                     
 	      .build();
 

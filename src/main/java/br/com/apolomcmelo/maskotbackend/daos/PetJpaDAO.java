@@ -2,23 +2,20 @@ package br.com.apolomcmelo.maskotbackend.daos;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.apolomcmelo.maskotbackend.models.Pet;
-import br.com.apolomcmelo.maskotbackend.persistence.PetMapper;
 
 @Repository
-public class PetDAO extends GenericDAO implements IPetDAO {
-	
-	@Autowired
-	private PetMapper mapper;
-	
+public class PetJpaDAO extends GenericJpaDAO<Long, Pet> implements IPetDAO {
+
+	@Override
 	public boolean insertPet(Pet pet) {
 		boolean success = true;
 		
 		try{
-			mapper.insertPet(pet);			
+			super.insert(pet);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			success = false;
@@ -26,12 +23,13 @@ public class PetDAO extends GenericDAO implements IPetDAO {
 		
 		return success;
 	}
-	
+
+	@Override
 	public boolean updatePet(Pet pet) {
 		boolean success = true;
 		
 		try{
-			mapper.updatePet(pet);			
+			super.update(pet);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			success = false;
@@ -39,12 +37,15 @@ public class PetDAO extends GenericDAO implements IPetDAO {
 		
 		return success;
 	}
-	
+
+	@Override
 	public List<Pet> listPets() {
-		return mapper.listPets();
+		return super.list();
 	}
-	
+
+	@Override
 	public Pet findPetById(Long id) {
-		return mapper.findPetById(id);
+		return super.getById(id);
 	}
+
 }

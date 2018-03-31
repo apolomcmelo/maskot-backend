@@ -8,6 +8,8 @@ public interface PetMapper {
 	
 	public void insertPet(Pet pet);
 	
+	public void updatePet(Pet pet);
+
 	public List<Pet> listPets();
 	
 	public Pet findPetById(Long id);
