@@ -2,12 +2,15 @@ package br.com.apolomcmelo.maskotbackend.converters;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import br.com.apolomcmelo.maskotbackend.dtos.BreedDTO;
 import br.com.apolomcmelo.maskotbackend.generics.Converter;
 import br.com.apolomcmelo.maskotbackend.models.Breed;
 
 import com.google.common.collect.Lists;
 
+@Component
 public class BreedConverter implements Converter<Breed, BreedDTO> {
 
 	@Override

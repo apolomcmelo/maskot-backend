@@ -2,14 +2,16 @@ package br.com.apolomcmelo.maskotbackend.converters;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import br.com.apolomcmelo.maskotbackend.dtos.DeficiencyDTO;
 import br.com.apolomcmelo.maskotbackend.generics.Converter;
 import br.com.apolomcmelo.maskotbackend.models.Deficiency;
 
 import com.google.common.collect.Lists;
 
-public class DeficiencyConverter implements
-		Converter<Deficiency, DeficiencyDTO> {
+@Component
+public class DeficiencyConverter implements Converter<Deficiency, DeficiencyDTO> {
 
 	@Override
 	public DeficiencyDTO convertToDTO(Deficiency model) {

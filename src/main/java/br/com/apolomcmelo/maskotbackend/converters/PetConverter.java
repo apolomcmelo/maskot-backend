@@ -3,12 +3,15 @@ package br.com.apolomcmelo.maskotbackend.converters;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.google.common.collect.Lists;
 
 import br.com.apolomcmelo.maskotbackend.dtos.PetDTO;
 import br.com.apolomcmelo.maskotbackend.generics.Converter;
 import br.com.apolomcmelo.maskotbackend.models.Pet;
 
+@Component
 public class PetConverter implements Converter<Pet, PetDTO> {
 
 	@Override

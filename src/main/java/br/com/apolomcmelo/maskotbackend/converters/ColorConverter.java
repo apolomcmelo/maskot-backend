@@ -2,12 +2,15 @@ package br.com.apolomcmelo.maskotbackend.converters;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import br.com.apolomcmelo.maskotbackend.dtos.ColorDTO;
 import br.com.apolomcmelo.maskotbackend.generics.Converter;
 import br.com.apolomcmelo.maskotbackend.models.Color;
 
 import com.google.common.collect.Lists;
 
+@Component
 public class ColorConverter implements Converter<Color, ColorDTO> {
 
 	@Override
