@@ -12,10 +12,12 @@ import javax.persistence.Table;
 
 import br.com.apolomcmelo.maskotbackend.enums.Size;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -26,7 +28,7 @@ public class Breed implements Serializable {
 
 	@Id
     @Column(name = "ID_BREED")
-    @GeneratedValue
+	@GeneratedValue
 	private Long id;
 	
 	@Column(name = "NAME")

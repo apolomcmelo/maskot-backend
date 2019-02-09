@@ -3,7 +3,6 @@ package br.com.apolomcmelo.maskotbackend.daos;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import br.com.apolomcmelo.maskotbackend.models.Pet;
 

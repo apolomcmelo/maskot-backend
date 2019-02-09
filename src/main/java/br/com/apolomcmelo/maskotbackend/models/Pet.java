@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -21,11 +22,13 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import br.com.apolomcmelo.maskotbackend.enums.Species;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -35,6 +38,7 @@ public class Pet implements Serializable {
 
 	@Id
 	@Column(name = "ID_PET")
+	@GeneratedValue
 	private Long id;
 	
 	@Column(name = "NAME")
@@ -51,11 +55,11 @@ public class Pet implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Species species;
 	
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "ID_BREED")
 	private Breed breed;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "ID_COLOR")
 	private Color color;
 	
