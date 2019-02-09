@@ -1,4 +1,4 @@
-package br.com.apolomcmelo.maskotbackend.daos;
+package br.com.apolomcmelo.maskotbackend.generics;
 
 import lombok.Data;
 
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 @Data
-public abstract class GenericDAO {
+public abstract class DAO {
 
     @Autowired
     @Qualifier("sqlSession")

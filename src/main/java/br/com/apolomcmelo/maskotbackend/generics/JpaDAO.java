@@ -1,4 +1,4 @@
-package br.com.apolomcmelo.maskotbackend.daos;
+package br.com.apolomcmelo.maskotbackend.generics;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class GenericJpaDAO<PK, T> {
+public class JpaDAO<PK, T> {
 	
 	@Autowired
 	private EntityManager entityManager;

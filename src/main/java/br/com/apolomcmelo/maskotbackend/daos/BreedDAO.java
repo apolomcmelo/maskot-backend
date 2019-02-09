@@ -6,20 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import br.com.apolomcmelo.maskotbackend.generics.DAO;
-import br.com.apolomcmelo.maskotbackend.models.Pet;
-import br.com.apolomcmelo.maskotbackend.persistence.PetMapper;
+import br.com.apolomcmelo.maskotbackend.models.Breed;
+import br.com.apolomcmelo.maskotbackend.persistence.BreedMapper;
 
 @Repository
-public class PetDAO extends DAO implements IPetDAO {
+public class BreedDAO extends DAO implements IBreedDAO {
 	
 	@Autowired
-	private PetMapper mapper;
+	private BreedMapper mapper;
 	
-	public boolean insertPet(Pet pet) {
+	public boolean insertBreed(Breed breed) {
 		boolean success = true;
 		
 		try{
-			mapper.insertPet(pet);			
+			mapper.insertBreed(breed);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			success = false;
@@ -28,11 +28,11 @@ public class PetDAO extends DAO implements IPetDAO {
 		return success;
 	}
 	
-	public boolean updatePet(Pet pet) {
+	public boolean updateBreed(Breed breed) {
 		boolean success = true;
 		
 		try{
-			mapper.updatePet(pet);			
+			mapper.updateBreed(breed);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			success = false;
@@ -41,11 +41,11 @@ public class PetDAO extends DAO implements IPetDAO {
 		return success;
 	}
 	
-	public List<Pet> listPets() {
-		return mapper.listPets();
+	public List<Breed> listBreeds() {
+		return mapper.listBreeds();
 	}
 	
-	public Pet findPetById(Long id) {
-		return mapper.findPetById(id);
+	public Breed findBreedById(Long id) {
+		return mapper.findBreedById(id);
 	}
 }

@@ -6,20 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import br.com.apolomcmelo.maskotbackend.generics.DAO;
-import br.com.apolomcmelo.maskotbackend.models.Pet;
-import br.com.apolomcmelo.maskotbackend.persistence.PetMapper;
+import br.com.apolomcmelo.maskotbackend.models.Color;
+import br.com.apolomcmelo.maskotbackend.persistence.ColorMapper;
 
 @Repository
-public class PetDAO extends DAO implements IPetDAO {
+public class ColorDAO extends DAO implements IColorDAO {
 	
 	@Autowired
-	private PetMapper mapper;
+	private ColorMapper mapper;
 	
-	public boolean insertPet(Pet pet) {
+	public boolean insertColor(Color color) {
 		boolean success = true;
 		
 		try{
-			mapper.insertPet(pet);			
+			mapper.insertColor(color);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			success = false;
@@ -28,11 +28,11 @@ public class PetDAO extends DAO implements IPetDAO {
 		return success;
 	}
 	
-	public boolean updatePet(Pet pet) {
+	public boolean updateColor(Color color) {
 		boolean success = true;
 		
 		try{
-			mapper.updatePet(pet);			
+			mapper.updateColor(color);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			success = false;
@@ -41,11 +41,11 @@ public class PetDAO extends DAO implements IPetDAO {
 		return success;
 	}
 	
-	public List<Pet> listPets() {
-		return mapper.listPets();
+	public List<Color> listColors() {
+		return mapper.listColors();
 	}
 	
-	public Pet findPetById(Long id) {
-		return mapper.findPetById(id);
+	public Color findColorById(Long id) {
+		return mapper.findColorById(id);
 	}
 }

@@ -5,17 +5,17 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import br.com.apolomcmelo.maskotbackend.generics.JpaDAO;
-import br.com.apolomcmelo.maskotbackend.models.Pet;
+import br.com.apolomcmelo.maskotbackend.models.Deficiency;
 
 @Repository
-public class PetJpaDAO extends JpaDAO<Long, Pet> implements IPetDAO {
+public class DeficiencyJpaDAO extends JpaDAO<Long, Deficiency> implements IDeficiencyDAO {
 
 	@Override
-	public boolean insertPet(Pet pet) {
+	public boolean insertDeficiency(Deficiency deficiency) {
 		boolean success = true;
 		
 		try{
-			super.insert(pet);			
+			super.insert(deficiency);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			success = false;
@@ -25,11 +25,11 @@ public class PetJpaDAO extends JpaDAO<Long, Pet> implements IPetDAO {
 	}
 
 	@Override
-	public boolean updatePet(Pet pet) {
+	public boolean updateDeficiency(Deficiency deficiency) {
 		boolean success = true;
 		
 		try{
-			super.update(pet);			
+			super.update(deficiency);			
 		} catch (Exception e) {
 			e.printStackTrace();
 			success = false;
@@ -39,12 +39,12 @@ public class PetJpaDAO extends JpaDAO<Long, Pet> implements IPetDAO {
 	}
 
 	@Override
-	public List<Pet> listPets() {
+	public List<Deficiency> listDeficiencies() {
 		return super.list();
 	}
 
 	@Override
-	public Pet findPetById(Long id) {
+	public Deficiency findDeficiencyById(Long id) {
 		return super.getById(id);
 	}
 

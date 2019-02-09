@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 
+import br.com.apolomcmelo.maskotbackend.converters.PetConverter;
 import br.com.apolomcmelo.maskotbackend.daos.PetJpaDAO;
 import br.com.apolomcmelo.maskotbackend.dtos.PetDTO;
 
@@ -18,12 +19,15 @@ public class PetBusiness {
 	@Autowired
 	private PetJpaDAO dao;
 	
+	@Autowired
+	private PetConverter converter;
+	
 	public boolean insertPet(PetDTO pet) {
 		if(ObjectUtils.isEmpty(pet)) {
 			return false;
 		}
 		
-		return pet.hasId() == false && dao.insertPet(pet);
+		return pet.hasId() == false && dao.insertPet(converter.convertToModel(pet));
 	}
 	
 	public boolean updatePet(PetDTO pet) {
@@ -31,11 +35,11 @@ public class PetBusiness {
 			return false;
 		}
 		
-		return pet.hasId() == true && dao.updatePet(pet);
+		return pet.hasId() == true && dao.updatePet(converter.convertToModel(pet));
 	}
 	
 	public List<PetDTO> listPet() {
-		return dao.listPets();
+		return converter.convertListToDTO(dao.listPets());
 	}
 	
 }
