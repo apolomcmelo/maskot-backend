@@ -39,7 +39,7 @@ public class DeficiencyBusiness {
 	}
 	
 	public List<DeficiencyDTO> listDeficiency() {
-		return converter.convertListToDTO(dao.listDeficiencys());
+		return converter.convertListToDTO(dao.listDeficiencies());
 	}
 	
 }
