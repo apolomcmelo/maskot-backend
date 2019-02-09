@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.apolomcmelo.maskotbackend.business.PetBusiness;
 import br.com.apolomcmelo.maskotbackend.dtos.PetDTO;
-import br.com.apolomcmelo.maskotbackend.models.Pet;
 
 @RestController
 @RequestMapping("/pet")
